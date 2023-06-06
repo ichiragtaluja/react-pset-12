@@ -17,9 +17,15 @@ export const Settings = () => {
       <h1>Preference Form</h1>
       <label>
         Font Size:
-        <select onChange={(e) => setSelectedFont(e.target.value)}>
+        <select
+          onChange={(e) => {
+            console.log(e.target.value);
+            setSelectedFont(e.target.value);
+          }}
+        >
+          <option default>Select Fonts</option>
           {fontSizes.map((font) => (
-            <option>{font}</option>
+            <option value={font}>{font}</option>
           ))}
         </select>
       </label>{" "}
@@ -27,7 +33,7 @@ export const Settings = () => {
         Color Scheme:
         <select onChange={(e) => setSelectedColor(e.target.value)}>
           {colorSchemes.map((color) => (
-            <option>{color}</option>
+            <option selected={selectedColor === color}>{color}</option>
           ))}
         </select>
       </label>

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const UserPreferenceContext = createContext();
 export const UserPreferenceProvider = ({ children }) => {
-  const fontSizes = ["large", "medium", "small"];
+  const fontSizes = ["large","medium","small"];
   const colorSchemes = ["dark", "light"];
 
   const [selectedFont, setSelectedFont] = useState(fontSizes[0]);
